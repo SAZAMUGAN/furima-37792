@@ -1,14 +1,14 @@
 ##  usersテーブル
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| nickname           | string | null: false |
-| email              | string | unique:true |
-| encrypted_password | string | null: false |
-| last_name          | string | null: false |
-| first_name         | string | null: false |
-| last_name_kana     | string | null: false |
-| first_name_kana    | string | null: false |
-| date_of_birth      | data   | null: false |
+| Column             | Type   | Options                  |
+| ------------------ | ------ | ------------------------ |
+| nickname           | string | null: false              |
+| email              | string | null: false, unique:true |
+| encrypted_password | string | null: false              |
+| last_name          | string | null: false              |
+| first_name         | string | null: false              |
+| last_name_kana     | string | null: false              |
+| first_name_kana    | string | null: false              |
+| date_of_birth      | data   | null: false              |
 
 ### Association
 
@@ -17,18 +17,17 @@
 
 ## items テーブル
 
-| Column                     | Type       | Options                        |
-| -------------------------- | ---------- | ------------------------------ |
-| name                       | string     | null: false                    |
-| explanation                | text       | null: false                    |
-| category                   | string     | null: false                    |
-| condition                  | string     | null: false                    |
-| burden_of_shipping_charges | string     | null: false                    |
-| shipping_area              | string     | null: false                    |
-| days_to_ship               | string     | null: false                    |
-| price                      | integer    | null: false                    |
-| user_id                    | references | null: false, foreign_key: true |
-| purchase_record_id         | references | null: false, foreign_key: true |
+| Column                        | Type       | Options                        |
+| ----------------------------- | ---------- | ------------------------------ |
+| name                          | string     | null: false                    |
+| explanation                   | text       | null: false                    |
+| category_id                   | integer    | null: false                    |
+| condition_id                  | integer    | null: false                    |
+| burden_of_shipping_charges_id | integer    | null: false                    |
+| ken_name_id                   | integer    | null: false                    |
+| days_to_ship_id               | integer    | null: false                    |
+| price                         | integer    | null: false                    |
+| user                          | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -39,9 +38,8 @@
 
 | Column               | Type       | Options                       |
 | -------------------- | ---------- | ----------------------------- |
-| user_id              | references | null:false, foreign_key: true |
-| item_id              | references | null:false, foreign_key: true |
-| shipping_address_id  | references | null:false, foreign_key: true |
+| user                 | references | null:false, foreign_key: true |
+| item                 | references | null:false, foreign_key: true |
 
 ### Association
 - belongs_to: user
@@ -53,12 +51,12 @@
 | Column             | Type       | Options                       |
 | ------------------ | ---------- | ----------------------------- |
 | post_code          | string     | null: false                   |
-| ken_name           | string     | null: false                   |
+| ken_name_id        | integer    | null: false                   |
 | city_name          | string     | null: false                   |
 | block              | string     | null: false                   |
 | building_name      | string     |                               |
-| phone_number       | integer    | null: false                   |
-| purchase_record_id | references | null:false, foreign_key: true |
+| phone_number       | string     | null: false                   |
+| purchase_record    | references | null:false, foreign_key: true |
 
 ### Association
 - belongs_to: purchase_record
