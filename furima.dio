@@ -1,22 +1,22 @@
 <mxfile host="65bd71144e">
     <diagram id="1yHgPzhJLpAmwh5vAKw2" name="ページ1">
-        <mxGraphModel dx="1716" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1661" dy="971" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="-40" y="80" width="550" height="320" as="geometry">
+                    <mxGeometry x="80" y="80" width="430" height="320" as="geometry">
                         <mxRectangle x="60" y="240" width="70" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="3" value="nickname  (string型,NOT NULL)&#10;&#10;email  (string型, NOT NULL, ユニーク制約)&#10;&#10;encrypted_password  (string型, NOT NULL)&#10;&#10;last_name (string, NOT NULL)&#10;&#10;&#10;first_name (string型, NOT NULL)&#10;&#10;last_name_kana (string型, NOT NULL)&#10;&#10;first_name_kana (string型, NOT NULL )&#10;&#10;date_of_birth (integer型,  NOT NULL)&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=13;verticalAlign=top;resizable=0;rotatable=0;part=1;strokeWidth=0;" parent="2" vertex="1">
-                    <mxGeometry y="30" width="550" height="290" as="geometry"/>
+                    <mxGeometry y="30" width="430" height="290" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="240" width="500" height="250" as="geometry"/>
+                    <mxGeometry x="1120" y="240" width="270" height="250" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="name  (string型, NOT NULL)&#10;&#10;explanation  (text型, NOT NULL)&#10;&#10;price  (integer型, NOT NULL)&#10;&#10;user_id  (外部キー)&#10;&#10;purchase_id  (外部キー制約)&#10;&#10;※ imageはActive storageを使う" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="4" vertex="1">
-                    <mxGeometry y="30" width="500" height="220" as="geometry"/>
+                    <mxGeometry y="30" width="270" height="220" as="geometry"/>
                 </mxCell>
                 <mxCell id="21" value="shipping_addresses" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="630" y="680" width="400" height="280" as="geometry"/>
