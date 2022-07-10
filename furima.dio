@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="1yHgPzhJLpAmwh5vAKw2" name="ページ1">
-        <mxGraphModel dx="1661" dy="971" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="969" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -13,15 +13,15 @@
                     <mxGeometry y="30" width="430" height="290" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="240" width="270" height="250" as="geometry"/>
+                    <mxGeometry x="1120" y="240" width="320" height="400" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="name  (string型, NOT NULL)&#10;&#10;explanation  (text型, NOT NULL)&#10;&#10;price  (integer型, NOT NULL)&#10;&#10;user_id  (外部キー)&#10;&#10;purchase_id  (外部キー制約)&#10;&#10;※ imageはActive storageを使う" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="4" vertex="1">
-                    <mxGeometry y="30" width="270" height="220" as="geometry"/>
+                <mxCell id="5" value="name  (string型, NOT NULL)&#10;&#10;explanation  (text型, NOT NULL)&#10;&#10;category  (string型, NOT NULL)&#10;&#10;condition  (string型, NOT NULL)&#10;&#10;burden_of_shipping_charges (string型, NOT NULL)&#10;&#10;shipping_area (string型, NOT NULL)&#10;&#10;days_to_ship (string型, NOT NULL)&#10;&#10;price  (integer型, NOT NULL)&#10;&#10;user_id  (外部キー)&#10;&#10;purchase_id  (外部キー制約)&#10;&#10;※ imageはActive storageを使う" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="4" vertex="1">
+                    <mxGeometry y="30" width="320" height="370" as="geometry"/>
                 </mxCell>
                 <mxCell id="21" value="shipping_addresses" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="630" y="680" width="400" height="280" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="post_code  (integer型, NOT NULL )&#10;&#10;ken_name   (string型, NOT NULL)&#10;&#10;city_name  (string型, NOT NULL)&#10;&#10;block  (string型, NOT NULL)&#10;&#10;building_name   (string型, NOT NULL)&#10;&#10;phone_number   (integer型, NOT NULL)&#10;&#10;user_id  (外部キー制約)&#10;&#10;purchase_id   (外部キー制約)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="21" vertex="1">
+                <mxCell id="22" value="post_code  (integer型, NOT NULL )&#10;&#10;ken_name   (string型, NOT NULL)&#10;&#10;city_name  (string型, NOT NULL)&#10;&#10;block  (string型, NOT NULL)&#10;&#10;building_name   (string型, NOT NULL)&#10;&#10;phone_number   (integer型, NOT NULL)&#10;&#10;purchase_id   (外部キー制約)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="21" vertex="1">
                     <mxGeometry y="30" width="400" height="250" as="geometry"/>
                 </mxCell>
                 <mxCell id="46" value="purchase_record" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
@@ -40,12 +40,6 @@
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="950" y="540" as="sourcePoint"/>
                         <mxPoint x="1050" y="440" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="54" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="3" target="22">
-                    <mxGeometry width="100" height="100" relative="1" as="geometry">
-                        <mxPoint x="240" y="780" as="sourcePoint"/>
-                        <mxPoint x="340" y="680" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="55" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;" edge="1" parent="1" source="5">
