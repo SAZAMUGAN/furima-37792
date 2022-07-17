@@ -52,8 +52,20 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
 
-      it 'passwordは半角英数字混合でないと登録できない' do
+      it 'passwordが半角数字のみでは登録できない' do
         @user.password = '123456'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid')
+      end
+
+      it 'passwordが半角英字のみでは登録できない' do
+        @user.password = 'abcdef'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid')
+      end
+
+      it 'passwordが全角では登録できない' do
+        @user.password = 'いろはにほへと'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid')
       end
@@ -82,13 +94,13 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("First name can't be blank")
       end
 
-      it 'last_nameが全角（漢字、カタカナ、ひらがな）でなければ登録できない' do
+      it 'last_nameが半角では登録できない' do
         @user.last_name = 'YAMADA'
         @user.valid?
         expect(@user.errors.full_messages).to include('Last name is invalid')
       end
 
-      it 'first_nameが全角（漢字、カタカナ、ひらがな）でなければ登録できない' do
+      it 'first_nameが半角では登録できない' do
         @user.first_name = 'TARO'
         @user.valid?
         expect(@user.errors.full_messages).to include('First name is invalid')
@@ -106,13 +118,13 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("First name kana can't be blank")
       end
 
-      it 'last_name_kanaが全角（カタカナ）でなければ登録できない' do
+      it 'last_name_kanaが全角（カタカナ）以外だと登録できない' do
         @user.last_name_kana = 'yamada'
         @user.valid?
         expect(@user.errors.full_messages).to include('Last name kana is invalid')
       end
 
-      it 'first_name_kanaが全角（カタカナ）でなければ登録できない' do
+      it 'first_name_kanaが全角（カタカナ）以外だと登録できない' do
         @user.first_name_kana = 'taro'
         @user.valid?
         expect(@user.errors.full_messages).to include('First name kana is invalid')
