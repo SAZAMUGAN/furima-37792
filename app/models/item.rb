@@ -3,7 +3,7 @@ class Item < ApplicationRecord
 
   has_one_attached :image
   belongs_to :user
-  has_one :purchase_record
+  # has_one :purchase_record
   belongs_to :category
   belongs_to :condition
   belongs_to :burden_of_shipping_charges
