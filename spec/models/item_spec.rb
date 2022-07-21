@@ -5,7 +5,6 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.build(:item)
   end
 
-
   describe '商品登録' do
     context '商品登録が出来るとき' do
       it 'imageとname、explanation、price、category_id、condition_id、burden_of_shipping_charges_id、ken_name_id、days_to_ship_idが存在すれば登録できる' do
@@ -32,27 +31,27 @@ RSpec.describe Item, type: :model do
       it 'priceが空では登録できない' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number", "Price is invalid")
+        expect(@item.errors.full_messages).to include('Price is not a number', 'Price is invalid')
       end
       it 'priceが全角数字では登録できない' do
         @item.price = '９８７'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
       it 'priceが全角文字では登録できない' do
         @item.price = '九百十'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
       it 'priceの値が300未満だと登録できない' do
         @item.price = '99'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
       it 'priceの値が9999999を超えると登録できない' do
         @item.price = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+        expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
       it 'category_idが空では登録できない' do
         @item.category_id = ''
@@ -79,7 +78,6 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Days to ship can't be blank")
       end
-      
     end
   end
 end
