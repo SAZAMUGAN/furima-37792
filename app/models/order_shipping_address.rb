@@ -5,10 +5,11 @@ class OrderShippingAddress
   with_options presence: true do
     validates :user_id
     validates :item_id
+    validates :order_id
     validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
     validates :city_name
     validates :block
-    validates :phone_number, format: {with: /\A^0[0-9]{9,10}$\z/}
+    validates :phone_number, format: {with: /\A^[0-9]{10,11}$\z/}
   end
   validates :ken_name_id, numericality: { other_than: 1, message: "can't be blank" }
 
