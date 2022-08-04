@@ -72,10 +72,10 @@ RSpec.describe OrderShippingAddress, type: :model do
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include("Item can't be blank")
       end
-      it 'orderが紐付いていないと保存できないこと' do
-        @order_shipping_address.order_id = nil
+      it "tokenが空では登録できないこと" do
+        @order_shipping_address.token = nil
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Order can't be blank")
+        expect(@order_shipping_address.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
