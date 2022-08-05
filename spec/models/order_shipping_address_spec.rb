@@ -24,19 +24,19 @@ RSpec.describe OrderShippingAddress, type: :model do
       it 'post_codeが空だと保存できないこと' do
         @order_shipping_address.post_code = ''
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Post code can't be blank", "Post code is invalid")
+        expect(@order_shipping_address.errors.full_messages).to include("Post code can't be blank", 'Post code is invalid')
       end
       it 'post_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
         @order_shipping_address.post_code = '1234567'
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Post code is invalid")
+        expect(@order_shipping_address.errors.full_messages).to include('Post code is invalid')
       end
       it 'ken_nameを選択していないと保存できないこと' do
         @order_shipping_address.ken_name_id = ''
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include("Ken name can't be blank")
       end
-       
+
       it 'city_nameが空だと保存できないこと' do
         @order_shipping_address.city_name = ''
         @order_shipping_address.valid?
@@ -50,17 +50,17 @@ RSpec.describe OrderShippingAddress, type: :model do
       it 'phone_numberが空だと保存できないこと' do
         @order_shipping_address.phone_number = ''
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Phone number can't be blank", "Phone number is invalid")
+        expect(@order_shipping_address.errors.full_messages).to include("Phone number can't be blank", 'Phone number is invalid')
       end
       it 'phone_numberが10桁以上11桁以内の半角数値でなければ保存できないこと' do
         @order_shipping_address.phone_number = '123456789'
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Phone number is invalid")
+        expect(@order_shipping_address.errors.full_messages).to include('Phone number is invalid')
       end
       it 'phone_numberが半角数値でなければ保存できないこと' do
         @order_shipping_address.phone_number = '１２３４５６７８９１０'
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Phone number is invalid")
+        expect(@order_shipping_address.errors.full_messages).to include('Phone number is invalid')
       end
       it 'userが紐付いていないと保存できないこと' do
         @order_shipping_address.user_id = nil
@@ -72,7 +72,7 @@ RSpec.describe OrderShippingAddress, type: :model do
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include("Item can't be blank")
       end
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @order_shipping_address.token = nil
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include("Token can't be blank")
