@@ -6,7 +6,7 @@ RSpec.describe OrderShippingAddress, type: :model do
       user = FactoryBot.create(:user)
       item = FactoryBot.create(:item)
       order = Order.create(user_id: user.id, item_id: item.id)
-      @order_shipping_address = FactoryBot.build(:order_shipping_address, user_id: user.id, item_id: item.id, order_id: order.id)
+      @order_shipping_address = FactoryBot.build(:order_shipping_address, user_id: user.id, item_id: item.id)
       sleep(1)
     end
 
@@ -31,8 +31,8 @@ RSpec.describe OrderShippingAddress, type: :model do
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include('Post code is invalid')
       end
-      it 'ken_nameを選択していないと保存できないこと' do
-        @order_shipping_address.ken_name_id = ''
+      it 'ken_nameに「---」が選択されている場合は保存できないこと' do
+        @order_shipping_address.ken_name_id = 1
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include("Ken name can't be blank")
       end
@@ -52,8 +52,13 @@ RSpec.describe OrderShippingAddress, type: :model do
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include("Phone number can't be blank", 'Phone number is invalid')
       end
-      it 'phone_numberが10桁以上11桁以内の半角数値でなければ保存できないこと' do
+      it '電話番号が9桁以下では購入できない' do
         @order_shipping_address.phone_number = '123456789'
+        @order_shipping_address.valid?
+        expect(@order_shipping_address.errors.full_messages).to include('Phone number is invalid')
+      end
+      it '電話番号が12桁以上では購入できない' do
+        @order_shipping_address.phone_number = '123456789012'
         @order_shipping_address.valid?
         expect(@order_shipping_address.errors.full_messages).to include('Phone number is invalid')
       end
