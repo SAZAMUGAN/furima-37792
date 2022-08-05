@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :move_to_index, only: :index
+  
+
   def index
     @item = Item.find(params[:item_id])
     @order_shipping_address = OrderShippingAddress.new
@@ -6,9 +10,11 @@ class OrdersController < ApplicationController
 
   def create
     @order_shipping_address = OrderShippingAddress.new(order_params)
+    @item = Item.find(params[:item_id])
     if @order_shipping_address.valid?
       pay_item
-      @order_shipping_address.save 
+      @order_shipping_address.save
+      @item.update(is_active: false)
       redirect_to root_path
     else
       @item = Item.find(params[:item_id])
@@ -32,6 +38,15 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def move_to_index
+    item = Item.find(params[:item_id])
+    if user_signed_in? && item.is_active == false
+      redirect_to root_path  
+    elsif user_signed_in? && current_user.id == item.user_id
+      redirect_to root_path
+    end
   end
 
 end

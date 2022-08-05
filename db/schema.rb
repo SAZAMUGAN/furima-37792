@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2022_07_31_011620) do
     t.integer "ken_name_id", null: false
     t.integer "days_to_ship_id", null: false
     t.integer "price", null: false
+    t.boolean "is_active", default: true, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

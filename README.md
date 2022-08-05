@@ -27,6 +27,7 @@
 | ken_name_id                   | integer    | null: false                    |
 | days_to_ship_id               | integer    | null: false                    |
 | price                         | integer    | null: false                    |
+| is_active                     | boolean    | null: false                    |
 | user                          | references | null: false, foreign_key: true |
 
 ### Association
