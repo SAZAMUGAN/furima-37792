@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   belongs_to :burden_of_shipping_charges
   belongs_to :ken_name
   belongs_to :days_to_ship
+  has_many :comments
 
   validates :image, presence: true
   validates :name, presence: true
