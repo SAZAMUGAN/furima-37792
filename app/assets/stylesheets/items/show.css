@@ -184,6 +184,27 @@
   margin: 10px 5px 0 0;
 }
 
+/* 始まり */
+.comments{
+  padding: 10px;
+  height: 200px;
+  overflow: scroll;
+}
+
+.comment{
+  display: flex;
+}
+
+.comment p{
+   margin: 0;
+}
+
+.user-info{
+  color: gray;
+  font-weight: bold;
+}
+/* 終わり */
+
 .links {
   display: flex;
   justify-content: space-between;
