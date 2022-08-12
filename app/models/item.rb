@@ -17,9 +17,9 @@ class Item < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
                     format: { with: /\A[0-9]+\z/ }
 
-  validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :condition_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :burden_of_shipping_charges_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :ken_name_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :days_to_ship_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :category_id, numericality: { other_than: 1, message: "が選択されていません" }
+  validates :condition_id, numericality: { other_than: 1, message: "が選択されていません" }
+  validates :burden_of_shipping_charges_id, numericality: { other_than: 1, message: "が選択されていません" }
+  validates :ken_name_id, numericality: { other_than: 1, message: "が選択されていません" }
+  validates :days_to_ship_id, numericality: { other_than: 1, message: "が選択されていません" }
 end
