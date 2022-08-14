@@ -1,5 +1,19 @@
 /* border-bottom: 1px solid #eee; */
 
+#previews {
+  display: flex;
+}
+
+.preview {
+  margin-right: 30px;
+}
+
+.preview-image{
+  height: 120px;
+  width: 120px;
+  /* 縦横比を保ったまま、画像を縦横100pxのサイズに収めるプロパティです */
+  object-fit: contain;
+}
 
 .items-sell-contents {
   background-color: #f5f5f5;
