@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
-  has_one_attached :image
+  has_many_attached :images
   belongs_to :user
   has_one :order
   belongs_to :category
@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   belongs_to :days_to_ship
   has_many :comments
 
-  validates :image, presence: true
+  validates :images, presence: true
   validates :name, presence: true
   validates :explanation, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
