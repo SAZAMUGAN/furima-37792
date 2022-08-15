@@ -11,8 +11,14 @@
 .preview-image{
   height: 120px;
   width: 120px;
-  /* 縦横比を保ったまま、画像を縦横100pxのサイズに収めるプロパティです */
   object-fit: contain;
+}
+
+.image-delete-button {
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
+  margin-bottom: 5px;
 }
 
 .items-sell-contents {

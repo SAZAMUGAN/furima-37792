@@ -12,6 +12,8 @@ class Item < ApplicationRecord
   has_many :comments
 
   validates :images, presence: true
+  validates :images, length: { minimum: 1, maximum: 5, message: "は1枚以上5枚以下にしてください" }
+  
   validates :name, presence: true
   validates :explanation, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },

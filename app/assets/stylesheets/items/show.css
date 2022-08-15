@@ -37,8 +37,12 @@
   display: flex;
 }
 
-.other-image {
+.other-image img{
   margin-right: 10px;
+  height: 12.5vh;
+  width: 12.5vw;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
 }
 
 .image-delete-button {
@@ -46,6 +50,9 @@
   border: solid 1px;
   cursor: pointer;
 }
+
+
+
 
 .item-price-box {
   margin: 25px 0px;
@@ -217,7 +224,6 @@
   color: gray;
   font-weight: bold;
 }
-/* 終わり */
 
 .links {
   display: flex;
