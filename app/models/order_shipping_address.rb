@@ -11,7 +11,7 @@ class OrderShippingAddress
     validates :block
     validates :phone_number, format: { with: /\A^[0-9]{10,11}$\z/ }
   end
-  validates :ken_name_id, numericality: { other_than: 1, message: "が選択されていません" }
+  validates :ken_name_id, numericality: { other_than: 1, message: 'が選択されていません' }
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
