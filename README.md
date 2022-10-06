@@ -68,7 +68,7 @@
 
 | Column             | Type       | Options                       |
 | ------------------ | ---------- | ----------------------------- |
-| tag_name           | string     | null: false                   |
+| tag_name           | string     | null: false, unique:true      |
 
 
 ### Association
