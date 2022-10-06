@@ -84,5 +84,5 @@
 | tag                | references | null:false, foreign_key: true |
 
 ### Association
-- has_many :items
-- has_many :tags
+- belongs_to :item
+- belongs_to :tag

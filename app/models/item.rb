@@ -10,6 +10,7 @@ class Item < ApplicationRecord
   belongs_to :ken_name
   belongs_to :days_to_ship
   has_many :comments
+  has_many :tags, through: :item_tag_relations
 
   validates :images, presence: true
   validates :images, length: { minimum: 1, maximum: 5, message: 'は1枚以上5枚以下にしてください' }
