@@ -76,7 +76,7 @@
 - has_many :items
 
 
-## items_tag_relations テーブル
+## item_tag_relations テーブル
 
 | Column             | Type       | Options                       |
 | ------------------ | ---------- | ----------------------------- |
