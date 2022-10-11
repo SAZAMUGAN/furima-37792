@@ -6,9 +6,9 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%= form_with model: @item, id: 'item-form', local: true do |f| %>
+    <%= form_with model: @item_tag, url: item_path(@item.id), method: :patch, id: 'item-form', local: true do |f| %>
 
-    <%= render 'shared/error_messages', model: @item %>
+    <%= render 'shared/error_messages', model: @item_tag %>
 
     <div class="img-upload">
       <div class="weight-bold-text">

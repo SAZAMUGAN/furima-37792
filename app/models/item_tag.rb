@@ -1,7 +1,9 @@
 class ItemTag
   include ActiveModel::Model
-  attr_accessor :images, :name, :explanation, :category_id, :condition_id, :burden_of_shipping_charges_id, :ken_name_id,:days_to_ship_id, :price,:tag_name, :user_id 
-  
+  attr_accessor(:images, :name, :explanation, :category_id, :condition_id, :burden_of_shipping_charges_id,
+    :ken_name_id,:days_to_ship_id, :price,:tag_name, :user_id, :is_active, :id, :created_at, :updated_at
+   )
+
   with_options presence: true do
     validates :images
     validates :name
@@ -24,6 +26,10 @@ class ItemTag
     tag = Tag.create(tag_name: tag_name)
 
     ItemTagRelation.create(item_id: item.id, tag_id: tag.id)
+  end
+
+  def update(params, item)
+    item.update(params)
   end
 
   
