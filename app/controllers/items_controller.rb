@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
   def edit
     item_attributes = @item.attributes
     @item_tag = ItemTag.new(item_attributes)
+    @item_tag.tag_name = @item.tags&.first&.tag_name
   end
 
   def update
