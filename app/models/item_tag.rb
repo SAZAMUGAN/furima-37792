@@ -1,8 +1,7 @@
 class ItemTag
   include ActiveModel::Model
   attr_accessor(:images, :name, :explanation, :category_id, :condition_id, :burden_of_shipping_charges_id,
-    :ken_name_id,:days_to_ship_id, :price,:tag_name, :user_id, :is_active, :id, :created_at, :updated_at, :tag_name
-   )
+                :ken_name_id, :days_to_ship_id, :price, :tag_name, :user_id, :is_active, :id, :created_at, :updated_at, :tag_name)
 
   with_options presence: true do
     validates :images
@@ -21,7 +20,7 @@ class ItemTag
 
   def save
     item = Item.create(images: images, name: name, explanation: explanation, category_id: category_id, condition_id: condition_id, burden_of_shipping_charges_id: burden_of_shipping_charges_id,
-    ken_name_id: ken_name_id, days_to_ship_id: days_to_ship_id, price: price, user_id: user_id)
+                       ken_name_id: ken_name_id, days_to_ship_id: days_to_ship_id, price: price, user_id: user_id)
 
     tag = Tag.where(tag_name: tag_name).first_or_initialize
     tag.save
@@ -40,6 +39,4 @@ class ItemTag
     item.update(params)
     ItemTagRelation.create(item_id: item.id, tag_id: tag.id) if tag_name.present?
   end
-
-  
 end
