@@ -25,7 +25,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
 
-  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  VALID_PASSWORD_REGEX = /\A[a-z_A-Z-0-9]+\z/
   validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }
 
   validates :last_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
