@@ -16,6 +16,7 @@ class ItemTag
     validates :ken_name_id, numericality: { other_than: 1, message: 'が選択されていません' }
     validates :days_to_ship_id, numericality: { other_than: 1, message: 'が選択されていません' }
     validates :user_id
+    validates :tag_name
   end
 
   def save

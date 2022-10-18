@@ -8,8 +8,8 @@ ja:
         first_name: 名
         first_name_kana: 名(カナ)
         date_of_birth: 生年月日
-      item:
-        image: 商品画像
+      item_tag:
+        images: 商品画像
         name: 商品名
         explanation: 商品の説明
         category_id: カテゴリー
@@ -19,6 +19,7 @@ ja:
         days_to_ship_id: 発送までの日数
         price: 価格
         user: ユーザー
+        tag_name: タグ
   activemodel:
     attributes:
       order_shipping_address:

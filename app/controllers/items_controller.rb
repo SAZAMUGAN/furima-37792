@@ -56,10 +56,6 @@ class ItemsController < ApplicationController
                                      :ken_name_id, :days_to_ship_id, :price, :tag_name, { images: [] }).merge(user_id: current_user.id)
   end
 
-  # def item_tag_params
-  # params.require(:item).permit(:name, :explanation, :category_id, :condition_id, :burden_of_shipping_charges_id,
-  # :ken_name_id, :days_to_ship_id, :price, :tag_name,{ images: [] }).merge(user_id: current_user.id)
-  # end
 
   def set_item
     @item = Item.find(params[:id])
