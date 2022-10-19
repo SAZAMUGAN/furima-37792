@@ -8,6 +8,8 @@ ja:
         first_name: 名
         first_name_kana: 名(カナ)
         date_of_birth: 生年月日
+  activemodel:
+    attributes:
       item_tag:
         images: 商品画像
         name: 商品名
@@ -20,8 +22,6 @@ ja:
         price: 価格
         user: ユーザー
         tag_name: タグ
-  activemodel:
-    attributes:
       order_shipping_address:
         token: トークン
         post_code: 郵便番号
@@ -32,6 +32,7 @@ ja:
         phone_number: 電話番号
         user_id: ユーザー
         item_id: 商品
+
 
 
 
