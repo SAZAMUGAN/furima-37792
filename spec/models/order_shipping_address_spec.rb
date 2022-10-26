@@ -4,7 +4,7 @@ RSpec.describe OrderShippingAddress, type: :model do
   describe '購入記録の保存' do
     before do
       user = FactoryBot.create(:user)
-      item = FactoryBot.create(:item)
+      item_tag = FactoryBot.create(:item_tag)
       order = Order.create(user_id: user.id, item_id: item.id)
       @order_shipping_address = FactoryBot.build(:order_shipping_address, user_id: user.id, item_id: item.id)
       sleep(1)

@@ -20,7 +20,7 @@ ja:
         ken_name_id: 発送元の地域
         days_to_ship_id: 発送までの日数
         price: 価格
-        user: ユーザー
+        user_id: ユーザー
         tag_name: タグ
       order_shipping_address:
         token: トークン

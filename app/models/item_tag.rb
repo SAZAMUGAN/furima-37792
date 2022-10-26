@@ -1,7 +1,7 @@
 class ItemTag
   include ActiveModel::Model
   attr_accessor(:images, :name, :explanation, :category_id, :condition_id, :burden_of_shipping_charges_id,
-                :ken_name_id, :days_to_ship_id, :price, :tag_name, :user_id, :is_active, :id, :created_at, :updated_at, :tag_name)
+                :ken_name_id, :days_to_ship_id, :price, :tag_name, :user_id, :is_active, :id, :created_at, :updated_at)
 
   with_options presence: true do
     validates :images
