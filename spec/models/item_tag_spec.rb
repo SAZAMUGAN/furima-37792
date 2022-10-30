@@ -3,10 +3,13 @@ require 'rails_helper'
 RSpec.describe ItemTag, type: :model do
   describe '商品登録' do
     before do
-      user = FactoryBot.create(:user)
-      item = FactoryBot.build(:item)
-      @item_tag = FactoryBot.build(:item_tag, user_id: user.id) 
-      @item_tag.images = item.images
+      @user = FactoryBot.create(:user)
+      @item = FactoryBot.build(:item) 
+      @item.images.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+      @item.save
+      @item_tag = FactoryBot.build(:item_tag, user_id: @user.id) 
+      @item_tag.images = @item.images
+      
     end
 
   

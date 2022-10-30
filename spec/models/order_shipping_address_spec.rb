@@ -3,11 +3,29 @@ require 'rails_helper'
 RSpec.describe OrderShippingAddress, type: :model do
   describe '購入記録の保存' do
     before do
+      # user = FactoryBot.create(:user)
+      # item = FactoryBot.build(:item)
+      # @item_tag = FactoryBot.build(:item_tag, user_id: user.id) 
+      # @item_tag.images = item.images
+      # @item_tag.save
+      # @order_shipping_address = FactoryBot.build(:order_shipping_address, user_id: user.id, item_id: @item_tag.id)
+      # sleep(1)
+
+      # @user = FactoryBot.create(:user)
+      # @item = FactoryBot.build(:item) 
+      # @item.images.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+      # @item.save
+      # @item_tag = FactoryBot.build(:item_tag, user_id: @user.id) 
+      # @item_tag.save
+      # @order_shipping_address = FactoryBot.build(:order_shipping_address, user_id: @user.id, item_id: @item.id)
+      # sleep(1)
+      
+
       user = FactoryBot.create(:user)
-      item_tag = FactoryBot.create(:item_tag)
-      order = Order.create(user_id: user.id, item_id: item.id)
+      item = FactoryBot.create(:item)
       @order_shipping_address = FactoryBot.build(:order_shipping_address, user_id: user.id, item_id: item.id)
       sleep(1)
+
     end
 
     context '内容に問題ない場合' do
